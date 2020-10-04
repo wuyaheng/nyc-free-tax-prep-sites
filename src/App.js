@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MapBox from "./components/MapBox/index"
 import './App.css';
 import axios from "axios"
 
@@ -26,8 +27,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-      </div>
+      <>
+      <nav className="navbar navbar-light bg-dark justify-content-center">
+          <span className="navbar-brand mb-0 h1 text-white pt-1">
+          NYC Free Tax Prep Sites
+          </span>
+      </nav>
+   
+      <div className="container">
+          <div className="col-md-12">
+              <div className="card">
+                <MapBox results={this.state.results} /> 
+              </div>
+            </div>
+       </div> 
+      </>
     )
   }
 }
