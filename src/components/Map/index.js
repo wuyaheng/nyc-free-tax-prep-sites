@@ -1,7 +1,8 @@
 import React from "react";
 import L from "leaflet";
 
-export default (props) => {
+
+function Map(props) {
   React.useEffect(() => {
     const MAP_CONTAINER = document.getElementById("map-container");
 
@@ -36,3 +37,5 @@ export default (props) => {
 
   return <div id="map-container"></div>;
 };
+
+export default Map;
