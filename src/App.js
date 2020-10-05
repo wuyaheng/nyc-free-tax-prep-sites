@@ -68,8 +68,7 @@ class App extends Component {
    
       <div className="container">
       <div className="row">
-      
-      <h5 className="mt-3">Choose a borough</h5>
+      <h5 className="mt-2">Choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
       </div>
         <div className="row">
@@ -78,6 +77,9 @@ class App extends Component {
                 <MapBox results={this.state.filtered} /> 
               </div>
             </div>
+        </div>
+        <div className="row justify-content-end">
+          <p>Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Business/NYC-Free-Tax-Prep-Sites/5kqf-fg3n">NYC OpenData</a></p>
         </div>
        </div> 
       </>

@@ -15,5 +15,6 @@ select, option:focus {
 
 h5 {
   font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.2rem !important;
 }
 
