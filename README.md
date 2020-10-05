@@ -3,7 +3,7 @@
 ![tax](https://user-images.githubusercontent.com/52837649/95041049-968a1600-06a3-11eb-9cf9-9e46903fafc1.gif)
 
 ## Description
-NYC Free Tax Prep Sites Map is created using React.js and NYC OpenData API to allow users to select a borough of interest and then see all the free tax prep sites available in the NYC map along with some additional information such as phone number, address, open close date, income limit and if amended return service is provided or not, and whether the site accommodates walk-ins or appointments or both. 
+NYC Free Tax Prep Sites Map is created using React.js and NYC OpenData API to allow users to select a borough of interest and then see all the free tax prep sites available in the NYC map along with some additional information such as phone number, address, open close date, income limit, if amended return service is provided or not, and whether the site accommodates walk-ins or appointments or both. 
 
 
 ## Table of Contents
