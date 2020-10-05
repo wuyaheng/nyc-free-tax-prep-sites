@@ -39,7 +39,7 @@ class App extends Component {
     const res = await axios.get('https://data.cityofnewyork.us/resource/5kqf-fg3n.json',
     {
       params: {
-        boroughs: this.state.sel_borough 
+        borough: this.state.sel_borough 
       }
     }
     )
@@ -69,12 +69,12 @@ class App extends Component {
       <div className="container">
       <h5 className="text-center mt-4">Choose a borough</h5>
       <div className="row">
-        <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} />
+        <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
       </div>
         <div className="row">
           <div className="col-md-12">
               <div className="card">
-                <MapBox results={this.state.results} /> 
+                <MapBox results={this.state.filtered} /> 
               </div>
             </div>
         </div>
