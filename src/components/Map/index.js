@@ -11,7 +11,7 @@ export default (props) => {
       MAP_ID.setAttribute("id", "mapid");
       MAP_CONTAINER.appendChild(MAP_ID);
 
-      const mymap = L.map("mapid").setView([props.lat, props.lon], 13);
+      const mymap = L.map("mapid").setView([props.lat, props.lon], 12);
 
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -27,7 +27,7 @@ export default (props) => {
       ).addTo(mymap);
 
       props.pins.forEach((pin) =>
-        L.marker([pin.latitude, pin.longitude]).addTo(mymap).bindPopup(pin.mappedaddress).openPopup()
+        L.marker([pin.latitude, pin.longitude]).addTo(mymap).bindTooltip('Provider Name: ' + pin.providername + '</br> Site Name: ' + pin.sitename + '</br> Address: ' + pin.mappedaddress  + '</br> Phone: ' +  pin.phone + '</br> Income Limit: ' + pin.incomelimit + '</br> Language: ' + pin.l1 + '</br> Appointment or Walk-in: ' + pin.apptorwalkin + '</br> Amended Return: ' + pin.amendedreturn + '</br> Notes: ' + pin.notes)  
       );
 
     }

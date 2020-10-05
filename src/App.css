@@ -5,3 +5,8 @@
 #mapid { 
   height: 70vh; 
 }
+
+select, option:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

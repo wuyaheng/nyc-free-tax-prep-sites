@@ -72,7 +72,7 @@ class App extends Component {
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
       </div>
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-12 p-0">
               <div className="card">
                 <MapBox results={this.state.filtered} /> 
               </div>
