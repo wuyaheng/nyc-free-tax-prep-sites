@@ -24,7 +24,7 @@ React, JavaScript, API, Leaflet
 https://nyc-free-tax-prep-sites.netlify.app/
 
 ## Usage
-Select borough of interest
+Select a borough of interest
 
 ## Questions
 ![user profile image](https://avatars0.githubusercontent.com/u/52837649?v=4)
