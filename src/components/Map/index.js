@@ -2,7 +2,7 @@ import React from "react";
 import L from "leaflet";
 
 
-function Map(props) {
+export default (props) => {
   React.useEffect(() => {
     const MAP_CONTAINER = document.getElementById("map-container");
 
@@ -11,7 +11,7 @@ function Map(props) {
       MAP_ID.setAttribute("id", "mapid");
       MAP_CONTAINER.appendChild(MAP_ID);
 
-      const mymap = L.map("mapid").setView([props.lat, props.lon], 10);
+      const mymap = L.map("mapid").setView([props.lat, props.lon], 13);
 
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -38,4 +38,3 @@ function Map(props) {
   return <div id="map-container"></div>;
 };
 
-export default Map;

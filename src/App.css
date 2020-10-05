@@ -1,3 +1,7 @@
 .navbar-light,.navbar-light {
   margin: 0 auto !important;
 }
+
+#mapid { 
+  height: 70vh; 
+}
