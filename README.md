@@ -1,5 +1,7 @@
 # NYC Free Tax Prep Sites
 
+![tax](https://user-images.githubusercontent.com/52837649/95041049-968a1600-06a3-11eb-9cf9-9e46903fafc1.gif)
+
 ## Description
 NYC Free Tax Prep Sites on a Map
 
