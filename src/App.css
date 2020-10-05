@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .navbar-light,.navbar-light {
   margin: 0 auto !important;
 }
 
 #mapid { 
-  height: 70vh; 
+  height: 75vh; 
 }
 
 select, option:focus {
   outline: none !important;
   box-shadow: none !important;
 }
+
+h5 {
+  font-family: 'Roboto', sans-serif;
+}
+

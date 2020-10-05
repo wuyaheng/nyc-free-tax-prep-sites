@@ -67,8 +67,9 @@ class App extends Component {
       </nav>
    
       <div className="container">
-      <h5 className="text-center mt-2">Choose a borough</h5>
       <div className="row">
+      
+      <h5 className="mt-3">Choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
       </div>
         <div className="row">
