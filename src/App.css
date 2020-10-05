@@ -18,3 +18,8 @@ h5 {
   margin-bottom: 0.2rem !important;
 }
 
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90% !important;
+  }
+}
