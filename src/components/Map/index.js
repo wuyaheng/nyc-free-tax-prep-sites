@@ -27,7 +27,7 @@ export default (props) => {
       ).addTo(mymap);
 
       props.pins.forEach((pin) =>
-        L.marker([pin.latitude, pin.longitude]).addTo(mymap).bindTooltip('Provider Name: ' + pin.providername + '</br> Site Name: ' + pin.sitename + '</br> Address: ' + pin.mappedaddress  + '</br> Phone: ' +  pin.phone + '</br> Income Limit: ' + pin.incomelimit + '</br> Language: ' + pin.l1 + '</br> Appointment or Walk-in: ' + pin.apptorwalkin + '</br> Amended Return: ' + pin.amendedreturn + '</br> Notes: ' + pin.notes)  
+        L.marker([pin.latitude, pin.longitude]).addTo(mymap).bindTooltip('Provider Name: ' + pin.providername + '</br> Site Name: ' + pin.sitename + '</br> Address: ' + pin.mappedaddress.slice(1, -1)  + '</br> Phone: ' +  pin.phone + '</br> Language: ' + pin.l1.slice(1, -1) + '</br> Appointment or Walk-in: ' + pin.apptorwalkin + '</br> Amended Return: ' + pin.amendedreturn + '</br> Open Date - Close Date: ' + pin.opendatestr + ' - ' + pin.closedatestr + '</br> Income Limit: ' + pin.incomelimit + '</br> Notes: ' + pin.notes)  
       );
 
     }
