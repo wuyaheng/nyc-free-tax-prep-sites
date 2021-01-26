@@ -20,11 +20,15 @@ h5 {
   margin-bottom: 0.2rem !important;
 }
 
+.projectTitle {
+  font-size: 25px !important;
+}
+
 @media only screen and (max-width: 768px) {
   .container {
     width: 90% !important;
   }
-  .brand-logo {
-    font-size: 18px !important;
+  .projectTitle {
+    font-size: 20px !important;
   }
 }

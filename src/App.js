@@ -62,7 +62,7 @@ class App extends Component {
       <>
       <nav>
         <div class="nav-wrapper">
-          <p className="brand-logo center">NYC Free Tax Prep Sites</p>
+          <p className="center projectTitle">NYC Free Tax Prep Sites</p>
         </div>
        </nav>
    
