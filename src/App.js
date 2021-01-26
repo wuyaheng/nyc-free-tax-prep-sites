@@ -60,26 +60,26 @@ class App extends Component {
   render() {
     return (
       <>
-      <nav className="navbar navbar-light bg-dark justify-content-center">
-          <span className="navbar-brand mb-0 h1 text-white pt-1">
-          NYC Free Tax Prep Sites
-          </span>
-      </nav>
+      <nav>
+        <div class="nav-wrapper">
+          <p className="brand-logo center">NYC Free Tax Prep Sites</p>
+        </div>
+       </nav>
    
       <div className="container">
-      <div className="row">
-      <h5 className="mt-2">Choose a borough</h5>
+      <div className="row mb-0">
+      <h5>Choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
       </div>
-        <div className="row">
+        <div className="row mb-0">
           <div className="col-md-12 p-0">
               <div className="card">
                 <MapBox results={this.state.filtered} /> 
               </div>
             </div>
         </div>
-        <div className="row justify-content-end mb-0">
-          <p className="mb-0">Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Business/NYC-Free-Tax-Prep-Sites/5kqf-fg3n">NYC OpenData</a></p>
+        <div className="row justify-content-end mb-1">
+          <p className="mb-1">Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Business/NYC-Free-Tax-Prep-Sites/5kqf-fg3n">NYC OpenData</a></p>
         </div>
        </div> 
       </>
