@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MapBox from "./components/MapBox/index"
 import SearchForm from "./components/SearchForm/index";
 import CheckForm from "./components/CheckForm/index";
+import AppointmentForm from "./components/AppointmentForm/index";
 import './App.css';
 import axios from "axios"
 
@@ -11,7 +12,9 @@ class App extends Component {
   state = {
     boroughs: [],
     sel_borough: "",
-    taxSites: []
+    taxSites: [],
+    sel_app: "", 
+    appointment: []
   }
 
   componentDidMount() {
@@ -81,9 +84,11 @@ class App extends Component {
 
       <div className="row mt-2 mb-0"> 
       <div className="col-md-3">
-      <h5 className="mt-0">Choose a borough</h5>
+      <h5 className="mt-0">choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
-      <h5>Amended return?</h5>
+      <h5>appointment or walk-in</h5> 
+        <AppointmentForm results={this.state.boroughs} handleInputChange={this.handleInputChange} />
+      <h5>amended return</h5>
       <CheckForm results={this.state.amend} handleSelectChange={this.handleSelectChange} />
         </div> 
           <div className="col-md-9">
