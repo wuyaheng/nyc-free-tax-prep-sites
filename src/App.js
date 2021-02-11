@@ -80,7 +80,7 @@ class App extends Component {
 
       <div className="row mt-2 mb-0"> 
       <div class="col-md-4">
-      <h5>Choose a borough</h5>
+      <h5 class="mt-0">Choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
         </div> 
           <div className="col-md-8">
