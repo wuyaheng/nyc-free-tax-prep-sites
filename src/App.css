@@ -24,6 +24,10 @@ h5 {
   font-size: 25px !important;
 }
 
+.card {
+  box-shadow: none !important;
+}
+
 @media only screen and (max-width: 768px) {
   .container {
     width: 90% !important;

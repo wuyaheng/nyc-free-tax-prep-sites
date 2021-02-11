@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MapBox from "./components/MapBox/index"
 import SearchForm from "./components/SearchForm/index";
+import CheckForm from "./components/CheckForm/index";
 import './App.css';
 import axios from "axios"
 
@@ -10,7 +11,7 @@ class App extends Component {
   state = {
     boroughs: [],
     sel_borough: "",
-    filtered: []
+    taxSites: []
   }
 
   componentDidMount() {
@@ -52,7 +53,7 @@ class App extends Component {
     const res = await axios.get('https://data.cityofnewyork.us/resource/5kqf-fg3n.json', options)
 
     this.setState({
-      filtered: res.data
+      taxSites: res.data
     })
   }
 
@@ -71,7 +72,7 @@ class App extends Component {
     return (
       <>
       <nav>
-        <div class="nav-wrapper">
+        <div className="nav-wrapper">
           <p className="center projectTitle p-0 m-0">NYC Free Tax Prep Sites</p>
         </div>
        </nav>
@@ -79,18 +80,20 @@ class App extends Component {
       <div className="container-fluid">
 
       <div className="row mt-2 mb-0"> 
-      <div class="col-md-4">
-      <h5 class="mt-0">Choose a borough</h5>
+      <div className="col-md-3">
+      <h5 className="mt-0">Choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
+      <h5>Amended return?</h5>
+      <CheckForm results={this.state.amend} handleSelectChange={this.handleSelectChange} />
         </div> 
-          <div className="col-md-8">
+          <div className="col-md-9">
               <div className="card">
-                <MapBox results={this.state.filtered} /> 
+                <MapBox results={this.state.taxSites} /> 
               </div>
             </div>
         </div>
         <div className="row justify-content-end">
-          <p class="mr-3">Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Business/NYC-Free-Tax-Prep-Sites/5kqf-fg3n">NYC OpenData  </a></p>
+          <p className="mr-3">Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Business/NYC-Free-Tax-Prep-Sites/5kqf-fg3n">NYC OpenData  </a></p>
         </div>
 
        </div> 
