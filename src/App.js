@@ -4,20 +4,21 @@ import SearchForm from "./components/SearchForm/index";
 import './App.css';
 import axios from "axios"
 
+const ALLBOROUGHS = "All Boroughs"
+
 class App extends Component {
   state = {
     boroughs: [],
     sel_borough: "",
-    results: [],
     filtered: []
   }
 
   componentDidMount() {
     this.setState(
       {
-        sel_borough: "Bronx",
+        sel_borough: ALLBOROUGHS,
       },
-      this.fetchSites
+        this.fetchSites
     );
     this.fetchboroughs();
   }
@@ -27,26 +28,34 @@ class App extends Component {
       const res = await axios.get(
         'https://data.cityofnewyork.us/resource/5kqf-fg3n.json?$group=borough&$select=borough'
       );
+      const dropdownBoroughs = res.data.map((x) => x.borough)
+      const dropdown = [ALLBOROUGHS, ...dropdownBoroughs]
       this.setState({
-        boroughs: res.data.map((x) => x.borough)
+        boroughs: dropdown
       });
     } catch (error) {
       console.log(error)
     }
   } 
 
+
+
   fetchSites = async () => { 
-    const res = await axios.get('https://data.cityofnewyork.us/resource/5kqf-fg3n.json',
-    {
-      params: {
-        borough: this.state.sel_borough 
+    let options = {}
+    if (this.state.sel_borough !== ALLBOROUGHS) {
+      options = {
+        params: {
+          borough: this.state.sel_borough 
+        }
       }
     }
-    )
+    const res = await axios.get('https://data.cityofnewyork.us/resource/5kqf-fg3n.json', options)
+
     this.setState({
       filtered: res.data
     })
   }
+
 
   handleInputChange = (event) => {
     this.setState(
@@ -57,30 +66,33 @@ class App extends Component {
     )
   }
 
+
   render() {
     return (
       <>
       <nav>
         <div class="nav-wrapper">
-          <p className="center projectTitle">NYC Free Tax Prep Sites</p>
+          <p className="center projectTitle p-0 m-0">NYC Free Tax Prep Sites</p>
         </div>
        </nav>
    
-      <div className="container">
-      <div className="row mb-0">
+      <div className="container-fluid">
+
+      <div className="row mt-2 mb-0"> 
+      <div class="col-md-4">
       <h5>Choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
-      </div>
-        <div className="row mb-0">
-          <div className="col-md-12 p-0">
+        </div> 
+          <div className="col-md-8">
               <div className="card">
                 <MapBox results={this.state.filtered} /> 
               </div>
             </div>
         </div>
-        <div className="row justify-content-end mb-1">
-          <p className="mb-1">Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Business/NYC-Free-Tax-Prep-Sites/5kqf-fg3n">NYC OpenData</a></p>
+        <div className="row justify-content-end">
+          <p class="mr-3">Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Business/NYC-Free-Tax-Prep-Sites/5kqf-fg3n">NYC OpenData  </a></p>
         </div>
+
        </div> 
       </>
     )
