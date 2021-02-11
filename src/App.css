@@ -7,7 +7,7 @@
 }
 
 #mapid { 
-  height: 70vh; 
+  height: 75vh; 
 }
 
 select, option:focus {
@@ -31,6 +31,24 @@ h5 {
 .checkbox-blue[type="checkbox"].filled-in:checked+span:not(.lever):after{
   border: 2px solid #3f88c5 !important;
   background-color: #3f88c5 !important;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: #3f88c5 !important;
+}
+input[type=range]::-moz-range-thumb {
+  background-color: #3f88c5 !important;
+}
+input[type=range]::-ms-thumb {
+  background-color: #3f88c5 !important;
+}
+
+/***** These are to edit the thumb and the text inside the thumb *****/
+input[type=range] + .thumb {
+  background-color: #3f88c5 !important;
+}
+input[type=range] + .thumb.active .value {
+  color: #fff !important;
 }
 
 

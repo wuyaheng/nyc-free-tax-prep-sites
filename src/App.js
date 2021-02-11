@@ -3,6 +3,8 @@ import MapBox from "./components/MapBox/index"
 import SearchForm from "./components/SearchForm/index";
 import CheckForm from "./components/CheckForm/index";
 import AppointmentForm from "./components/AppointmentForm/index";
+import OpenDateRange from "./components/OpenDateRange/index";
+import CloseDateRange from "./components/CloseDateRange/index";  
 import './App.css';
 import axios from "axios"
 
@@ -13,8 +15,8 @@ class App extends Component {
     boroughs: [],
     sel_borough: "",
     taxSites: [],
-    sel_app: "", 
-    appointment: []
+    sel_amend: "", 
+    amendedOrNot: []
   }
 
   componentDidMount() {
@@ -25,7 +27,7 @@ class App extends Component {
         this.fetchSites
     );
     this.fetchboroughs();
-  }
+  } 
 
   fetchboroughs = async () => {
     try {
@@ -41,7 +43,6 @@ class App extends Component {
       console.log(error)
     }
   } 
-
 
 
   fetchSites = async () => { 
@@ -86,10 +87,14 @@ class App extends Component {
       <div className="col-md-3">
       <h5 className="mt-0">choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
-      <h5>appointment or walk-in</h5> 
-        <AppointmentForm results={this.state.boroughs} handleInputChange={this.handleInputChange} />
       <h5>amended return</h5>
       <CheckForm results={this.state.amend} handleSelectChange={this.handleSelectChange} />
+      <h5>appointment or walk-in</h5> 
+        <AppointmentForm results={this.state.boroughs} handleInputChange={this.handleInputChange} />
+        <h5>open date</h5> 
+        <OpenDateRange results={this.state.boroughs} handleInputChange={this.handleInputChange} />
+        <h5>close date</h5> 
+        <CloseDateRange results={this.state.boroughs} handleInputChange={this.handleInputChange} />
         </div> 
           <div className="col-md-9">
               <div className="card">
