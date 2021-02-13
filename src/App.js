@@ -3,8 +3,6 @@ import MapBox from "./components/MapBox/index"
 import SearchForm from "./components/SearchForm/index";
 import CheckForm from "./components/CheckForm/index";
 import AppointmentForm from "./components/AppointmentForm/index";
-import OpenDateRange from "./components/OpenDateRange/index";
-import CloseDateRange from "./components/CloseDateRange/index";  
 import './App.css';
 import axios from "axios"
 
@@ -45,6 +43,7 @@ class App extends Component {
   } 
 
 
+  
   fetchSites = async () => { 
     let options = {}
     if (this.state.sel_borough !== ALLBOROUGHS) {
@@ -72,6 +71,13 @@ class App extends Component {
   }
 
 
+  handleAmendChange = (event) => {
+    let sel_amen = event.target.value;
+    let isChecked = event.target.checked;
+    console.log(sel_amen) 
+    console.log(isChecked) 
+  }
+
   render() {
     return (
       <>
@@ -88,13 +94,9 @@ class App extends Component {
       <h5 className="mt-0">choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
       <h5>amended return</h5>
-      <CheckForm results={this.state.amend} handleSelectChange={this.handleSelectChange} />
+      <CheckForm handleAmendChange={this.handleAmendChange} />
       <h5>appointment or walk-in</h5> 
-        <AppointmentForm results={this.state.boroughs} handleInputChange={this.handleInputChange} />
-        <h5>open date</h5> 
-        <OpenDateRange results={this.state.boroughs} handleInputChange={this.handleInputChange} />
-        <h5>close date</h5> 
-        <CloseDateRange results={this.state.boroughs} handleInputChange={this.handleInputChange} />
+        <AppointmentForm handleAppointChange={this.handleAppointChange} />  
         </div> 
           <div className="col-md-9">
               <div className="card">
