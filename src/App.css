@@ -1,3 +1,12 @@
+h5 {
+  font-size: 1.3rem !important;
+  font-weight: 400 !important;
+}
+
+p {
+  text-align: justify;
+}
+
 .navbar-light,.navbar-light {
   margin: 0 auto !important;
 }
@@ -7,7 +16,7 @@
 }
 
 #mapid { 
-  height: 75vh; 
+  height: 80vh; 
 }
 
 select, option:focus {
