@@ -8,13 +8,17 @@ import axios from "axios"
 
 const ALLBOROUGHS = "All Boroughs"
 
+const compare = (a,b) => {
+  return a.toLowerCase() === b.toLowerCase()
+}
+
 class App extends Component {
   state = {
     boroughs: [],
     sel_borough: "",
     taxSites: [],
-    sel_amend: "", 
-    amendedOrNot: []
+    amended: {"yes": true, "no": true},
+    appointment: {"walk": true, "both": true, "appo": true} 
   }
 
   componentDidMount() {
@@ -72,13 +76,61 @@ class App extends Component {
 
 
   handleAmendChange = (event) => {
-    let sel_amen = event.target.value;
+    let val = event.target.value;
     let isChecked = event.target.checked;
-    console.log(sel_amen) 
-    console.log(isChecked) 
+    console.log(isChecked)
+    let newState = {...this.state}
+    newState.amended[val] = isChecked
+    this.setState(
+      newState
+    )
+  }
+
+
+  handleAppointChange =(event) => {
+    let val = event.target.value;
+    let isChecked = event.target.checked;
+    console.log(isChecked)
+    let newState = {...this.state}
+    newState.appointment[val] = isChecked
+    this.setState(
+      newState
+    )
   }
 
   render() {
+    let data = this.state.taxSites
+    if (this.state.amended.yes === false) {
+      data=data.filter((item) => {
+        return !compare(item.amendedreturn, "Yes")
+      }) 
+    } 
+
+    if (this.state.amended.no === false) {
+      data=data.filter((item) => {
+        return !compare(item.amendedreturn, "No")
+      }) 
+    } 
+
+    if (this.state.appointment.both === false) {
+      data=data.filter((item) => {
+        return !compare(item.apptorwalkin.slice(0,4), "Both")
+      }) 
+    } 
+
+    if (this.state.appointment.walk === false) {
+      data=data.filter((item) => {
+        return !compare(item.apptorwalkin.slice(0,4), "Walk")
+      }) 
+    } 
+
+    if (this.state.appointment.appo === false) {
+      data=data.filter((item) => {
+        return !compare(item.apptorwalkin.slice(0,4), "Appo")
+      }) 
+    } 
+
+
     return (
       <>
       <nav>
@@ -93,14 +145,21 @@ class App extends Component {
       <div className="col-md-3">
       <h5 className="mt-0">choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
+
+
       <h5>amended return</h5>
-      <CheckForm handleAmendChange={this.handleAmendChange} />
+      <CheckForm amended={this.state.amended} handleAmendChange={this.handleAmendChange} />
+
+      
       <h5>appointment or walk-in</h5> 
-        <AppointmentForm handleAppointChange={this.handleAppointChange} />  
+        <AppointmentForm appointment={this.state.appointment} handleAppointChange={this.handleAppointChange} />  
+
+
+
         </div> 
           <div className="col-md-9">
               <div className="card">
-                <MapBox results={this.state.taxSites} /> 
+                <MapBox results={data} /> 
               </div>
             </div>
         </div>
