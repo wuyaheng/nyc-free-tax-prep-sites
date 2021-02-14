@@ -144,7 +144,7 @@ class App extends Component {
       <div className="row mt-2 mb-0"> 
       <div className="col-md-3">
 
-      <a class="aboutBtn mt-2 waves-effect waves-light btn btn-block modal-trigger #3f88c5 text-white" href="#modal1">About</a>
+      <a class="aboutBtn mt-2 waves-effect waves-light btn btn-block modal-trigger #3f88c5 text-white" href="#modal1">About the Project</a>
 
       <div id="modal1" class="modal">
         <div class="modal-content pb-0 mb-0"> 

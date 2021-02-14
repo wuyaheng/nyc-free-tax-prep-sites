@@ -24,6 +24,7 @@ nav {
 
 .aboutBtn {
   background-color: #3f88c5 !important;
+  text-transform: none !important;
 }
 
 .aboutCloseBtn {
