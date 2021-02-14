@@ -19,7 +19,7 @@ NYC Free Tax Prep Sites Map is created using React and NYC OpenData API to allow
 React, JavaScript, API, Leaflet
 
 ## Link
-https://nyc-free-tax-prep-locations.netlify.app/
+https://nyc-free-taxreturn-prep-sites.netlify.app/
 
 ## Questions
 ![user profile image](https://avatars0.githubusercontent.com/u/52837649?v=4)
