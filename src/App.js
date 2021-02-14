@@ -141,7 +141,7 @@ class App extends Component {
    
       <div className="container-fluid">
 
-      <div className="row mt-2 mb-0"> 
+      <div className="row mt-2 mb-0 flex"> 
       <div className="col-md-4">
       <p className="mt-2">NYC Free Tax Prep Sites is a dashboard that displays all the locations in New York City that provide free tax return prep services. Users can either hover over the marker to see the prep site’s information, including their phone number, address, and other important details. Users can also use the drop-down menu and checkboxes to filter down to a few tax return prep sites that meet their requirements, including amendment return service availability, if they accept walk-ins, etc.</p>
       <h5 className="pb-1">choose a borough</h5>

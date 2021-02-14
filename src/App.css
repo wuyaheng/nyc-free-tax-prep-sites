@@ -7,6 +7,11 @@ p {
   text-align: justify;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .navbar-light,.navbar-light {
   margin: 0 auto !important;
 }
