@@ -133,16 +133,16 @@ class App extends Component {
 
     return (
       <>
-      <nav>
-        <div className="nav-wrapper">
-          <p className="center projectTitle p-0 m-0">NYC Free Tax Prep Sites</p>
-        </div>
-       </nav>
+
+        <nav className="nav-wrapper">
+          <p className="center projectTitle p-0 text-white">NYC Free Tax Prep Sites</p>
+        </nav>
+  
    
       <div className="container-fluid">
 
       <div className="row mt-2 mb-0"> 
-      <div className="col-md-3">
+      <div className="col-md-4">
       <p className="mt-2">NYC Free Tax Prep Sites is a dashboard that displays all the locations in New York City that provide free tax return prep services. Users can either hover over the marker to see the prep site’s information, including their phone number, address, and other important details. Users can also use the drop-down menu and checkboxes to filter down to a few tax return prep sites that meet their requirements, including amendment return service availability, if they accept walk-ins, etc.</p>
       <h5 className="pb-1">choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
@@ -158,14 +158,14 @@ class App extends Component {
 
 
         </div> 
-          <div className="col-md-9">
-              <div className="card">
+          <div className="col-md-8 mb-0 pb-0">
+              <div className="card mb-0 pb-0">
                 <MapBox results={data} /> 
               </div>
             </div>
         </div>
-        <div className="row justify-content-end">
-          <p className="mr-3">Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Business/NYC-Free-Tax-Prep-Sites/5kqf-fg3n">NYC OpenData  </a></p>
+        <div className="row justify-content-end mt-0 pt-0">
+          <p className="mr-4">Data Source: <a target="_blank" rel="noopener noreferrer" aria-label="NYC open data" href="https://data.cityofnewyork.us/Business/NYC-Free-Tax-Prep-Sites/5kqf-fg3n">NYC OpenData  </a></p>
         </div>
 
        </div> 

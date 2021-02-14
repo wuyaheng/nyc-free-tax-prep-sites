@@ -11,6 +11,11 @@ p {
   margin: 0 auto !important;
 }
 
+nav {
+  height: 50px;
+  line-height: 50px; 
+}
+
 .nav-wrapper {
   background-color: #3f88c5;
 }
@@ -25,7 +30,7 @@ select, option:focus {
 }
 
 h5 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif; 
   margin-bottom: 0.2rem !important;
 }
 
