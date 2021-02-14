@@ -7,9 +7,10 @@ p {
   text-align: justify;
 }
 
-.flex {
-  display: flex;
-  flex-wrap: wrap;
+.modal {
+  max-height: 20% !important;
+  width: 80% !important;
+  height: 20% !important;
 }
 
 .navbar-light,.navbar-light {
@@ -21,6 +22,13 @@ nav {
   line-height: 50px; 
 }
 
+.aboutBtn {
+  background-color: #3f88c5 !important;
+}
+
+.aboutCloseBtn {
+  background-color: #3f88c5 !important;
+}
 .nav-wrapper {
   background-color: #3f88c5;
 }

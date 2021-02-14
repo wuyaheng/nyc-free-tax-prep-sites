@@ -141,9 +141,21 @@ class App extends Component {
    
       <div className="container-fluid">
 
-      <div className="row mt-2 mb-0 flex"> 
-      <div className="col-md-4">
-      <p className="mt-2">NYC Free Tax Prep Sites is a dashboard that displays all the locations in New York City that provide free tax return prep services. Users can either hover over the marker to see the prep site’s information, including their phone number, address, and other important details. Users can also use the drop-down menu and checkboxes to filter down to a few tax return prep sites that meet their requirements, including amendment return service availability, if they accept walk-ins, etc.</p>
+      <div className="row mt-2 mb-0"> 
+      <div className="col-md-3">
+
+      <a class="aboutBtn mt-2 waves-effect waves-light btn btn-block modal-trigger #3f88c5 text-white" href="#modal1">About</a>
+
+      <div id="modal1" class="modal">
+        <div class="modal-content pb-0 mb-0"> 
+          <p>NYC Free Tax Prep Sites is a dashboard that displays all the locations in New York City that provide free tax return prep services. Users can either hover over the marker to see the prep site’s information, including their phone number, address, and other important details. Users can also use the drop-down menu and checkboxes to filter down to a few tax return prep sites that meet their requirements, including amendment return service availability, if they accept walk-ins, etc.</p>
+          <div class="modal-footer mb-0 pb-0">
+          <a href="#!" class="aboutCloseBtn modal-close waves-effect waves-green btn text-white #3f88c5">Close</a>
+        </div>
+        </div> 
+
+      </div>
+
       <h5 className="pb-1">choose a borough</h5>
         <SearchForm results={this.state.boroughs} handleInputChange={this.handleInputChange} /> 
 
@@ -158,7 +170,7 @@ class App extends Component {
 
 
         </div> 
-          <div className="col-md-8 mb-0 pb-0">
+          <div className="col-md-9 mb-0 pb-0">
               <div className="card mb-0 pb-0">
                 <MapBox results={data} /> 
               </div>
